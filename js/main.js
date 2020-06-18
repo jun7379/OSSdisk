@@ -16,6 +16,7 @@ function successFunction(data) {
     }
     var rowCells = allRows[singleRow].split(',');
     for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++count;}
       if (singleRow === 0) {
         table += '<th>';
         table += rowCells[rowCell];
@@ -36,5 +37,7 @@ function successFunction(data) {
   } 
   table += '</tbody>';
   table += '</table>';
+  document.write("가평군 약국 수:");
+  document.write(count);    
   $('body').append(table);
 }
